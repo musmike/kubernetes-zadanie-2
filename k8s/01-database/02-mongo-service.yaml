@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fishing-shop-db
+  namespace: fishing-ns
+  labels:
+    app: fishing-shop-db
+spec:
+  ports:
+  - port: 27017
+    name: mongo
+  clusterIP: None # Headless service
+  selector:
+    app: fishing-shop-db

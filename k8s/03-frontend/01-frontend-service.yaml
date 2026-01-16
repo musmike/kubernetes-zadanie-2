@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fishing-frontend-service
+  namespace: fishing-ns
+spec:
+  selector:
+    app: fishing-frontend
+  ports:
+    - protocol: TCP
+      port: 4200
+      targetPort: 80
+  type: ClusterIP

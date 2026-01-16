@@ -1,0 +1,68 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fishing-shop-db
+  namespace: fishing-ns
+  labels:
+    app: fishing-shop-db
+spec:
+  ports:
+  - port: 27017
+    name: mongo
+  clusterIP: None
+  selector:
+    app: fishing-shop-db
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: fishing-shop-db
+  namespace: fishing-ns
+spec:
+  serviceName: "fishing-shop-db"
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fishing-shop-db
+  template:
+    metadata:
+      labels:
+        app: fishing-shop-db
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: mongo
+        image: mongo:4.4.6
+        ports:
+        - containerPort: 27017
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "100m"
+          limits:
+            memory: "768Mi"
+            cpu: "500m"
+        env:
+          - name: MONGO_INITDB_ROOT_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: mongo-secret
+                key: username
+          - name: MONGO_INITDB_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: mongo-secret
+                key: password
+        volumeMounts:
+        - name: mongo-persistent-storage
+          mountPath: /data/db
+  
+  volumeClaimTemplates:
+  - metadata:
+      name: mongo-persistent-storage
+      namespace: fishing-ns
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 1Gi

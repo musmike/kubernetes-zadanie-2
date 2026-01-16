@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fishing-backend
+  namespace: fishing-ns
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: fishing-backend
+  template:
+    metadata:
+      labels:
+        app: fishing-backend
+    spec:
+      containers:
+        - name: backend
+          image: fishing-backend:v1
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 5000
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "300Mi"
+              cpu: "500m"
+          # livenessProbe:
+          #   tcpSocket:
+          #     port: 5000
+          #   initialDelaySeconds: 60
+          #   periodSeconds: 20
+          # readinessProbe:
+          #   tcpSocket:
+          #     port: 5000
+          #   initialDelaySeconds: 15
+          #   periodSeconds: 10
+          env:
+            - name: PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: backend-config
+                  key: PORT
+            - name: SALT
+              valueFrom:
+                secretKeyRef:
+                  name: backend-secret
+                  key: salt
+            - name: DB
+              valueFrom:
+                secretKeyRef:
+                  name: backend-secret
+                  key: db_connection
+            - name: JWTPRIVATEKEY
+              valueFrom:
+                secretKeyRef:
+                  name: backend-secret
+                  key: jwt_key
