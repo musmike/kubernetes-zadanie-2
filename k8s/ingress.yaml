@@ -1,0 +1,35 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: fishing-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  rules:
+    - host: brilliantapp.zad
+      http:
+        paths:
+          # Ruch na /api/... kierujemy do Backendu
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: fishing-backend-service
+                port:
+                  number: 5000
+          # Ruch na /auth/... (logowanie) też do Backendu
+          - path: /auth
+            pathType: Prefix
+            backend:
+              service:
+                name: fishing-backend-service
+                port:
+                  number: 5000
+          # Cała reszta (strona główna) idzie do Frontendu
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: fishing-frontend-service
+                port:
+                  number: 4200

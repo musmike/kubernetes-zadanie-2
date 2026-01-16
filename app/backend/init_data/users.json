@@ -1,0 +1,66 @@
+[{
+  "_id": {
+    "$oid": "666dabc152c685d02114826a"
+  },
+  "firstName": "Michał",
+  "lastName": "Adminowski",
+  "email": "admin@wp.pl",
+  "password": "$2a$12$qiRHC0KhvPeJGIh8Zjpj4Oh6jM/tFwUK5WpWqQSu36rG.9lRl4WNO",
+  "status": "admin",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666dc7da5b3c30512984f579"
+  },
+  "firstName": "Michał",
+  "lastName": "Userowski",
+  "email": "michal@wp.pl",
+  "password": "$2a$12$qiRHC0KhvPeJGIh8Zjpj4Oh6jM/tFwUK5WpWqQSu36rG.9lRl4WNO",
+  "status": "user",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666f134adca1fa322a03003c"
+  },
+  "firstName": "Elżbieta",
+  "lastName": "Nowak",
+  "email": "elzbieta@wp.pl",
+  "password": "$2b$10$a4rD3rprUxNXBxZDh4bT2uUD3hqFpPAJ3Nu9GmBKLV.Sg3K3GhaHO",
+  "status": "user",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666fe9a6a36831b0c418385f"
+  },
+  "firstName": "ga",
+  "lastName": "jgfhfgh",
+  "email": "gfgfg@e.pl",
+  "password": "$2b$10$GoJx1NHQVpha7RiIwRdzLOKvMUV7yFomcs2n2HnsJDXT2NYtI9kPm",
+  "status": "user",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "667023a1654882d3754b22e7"
+  },
+  "firstName": "Andrzej",
+  "lastName": "Nowak",
+  "email": "andrzej@wp.pl",
+  "password": "$2b$10$Dz78t7.Z7shDUAtINgNe/uB513HZP8gAxNZSFCxsWTselD3iRLJV.",
+  "status": "user",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66702451654882d3754b2310"
+  },
+  "firstName": "Karol",
+  "lastName": "Kowalski",
+  "email": "karol@wp.pl",
+  "password": "$2b$10$zSXlRBkbZnKplLOpXmWQHe6pkPA82SeseIWNej1cGBN09KpZqJEWm",
+  "status": "user",
+  "__v": 0
+}]

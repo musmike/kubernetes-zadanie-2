@@ -1,0 +1,167 @@
+[
+  {
+    "_id": {
+      "$oid": "666d90b70b8dd2ed3af6dc9d"
+    },
+    "title": "Najlepsze miejsca na wędkowanie",
+    "short_description": "Odkryj najlepsze miejsca na spokojne wędkowanie.",
+    "content": "Dziś rano wstałem przed świtem, pełen entuzjazmu na myśl o kolejnej wędkarskiej przygodzie. Opłynąłem spokojne jezioro łodzią, czując rytm fal i delikatny zapach porannej mgły. Po kilku godzinach połowu, zdobyłem kilka pięknych okoni. To była perfekcyjna harmonia między człowiekiem a przyrodą.",
+    "author": "Michał Muzyka",
+    "image_link": "/assets/img/posts/photo_6.jpg",
+    "created_at": "2021-10-12 13:24:53"
+  },
+  {
+    "_id": {
+      "$oid": "666d90b70b8dd2ed3af6dc9e"
+    },
+    "title": "Techniki wędkarskie: spinning",
+    "short_description": "Poznaj tajniki skutecznego łowienia ryb na spinning.",
+    "content": "Wędkarstwo to sztuka balansu i zrozumienia ryb. Dziś spędziłem cały dzień nad malowniczym stawem. Złowiłem nie tylko ryby, ale także chwilę spokoju i ucieczki od codziennego zgiełku. Gdy szczupaczek wskoczył na moją wędkę, serce zabiło mi mocniej - ta ryba była wyjątkowa, tak jak każda chwila spędzona z wędką.",
+    "author": "Michał Muzyka",
+    "image_link": "/assets/img/posts/photo_5.jpg",
+    "created_at": "2023-01-19 23:56:09"
+  },
+  {
+    "_id": {
+      "$oid": "666d90b70b8dd2ed3af6dc9f"
+    },
+    "title": "Złap swojego wielkiego Amura",
+    "short_description": "Praktyczne porady na złowienie wielkiego amura.",
+    "content": "Wędkarstwo to nie tylko sport, to pasja, która łączy nas z naturą. Dzisiaj postanowiłem wybrać się na dziką rzekę, pełną tajemnic i nieprzewidywalnych zwrotów akcji. Pomimo tego, że łowienie było wyzwaniem, udało mi się złowić kilka pięknych pstrągów. Czas spędzony nad wodą zawsze przynosi nowe doświadczenia i wrażenia.",
+    "author": "Michał Muzyka",
+    "image_link": "/assets/img/posts/photo_3.jpg",
+    "created_at": "2022-10-24 08:26:12"
+  },
+  {
+    "_id": {
+      "$oid": "666d90b70b8dd2ed3af6dca0"
+    },
+    "title": "Wiosenne połowy - karpie na powierzchni",
+    "short_description": "Jak skutecznie łowić karpie na powierzchni wiosną.",
+    "content": "Dzień spędzony nad rzeką to dzień pełen niespodzianek. Wędkarstwo to nie tylko o łowieniu ryb, ale także o obcowaniu z pięknem przyrody. Dziś złowiłem klenia, a chwile spędzone na brzegu rzeki pozwoliły mi oderwać się od codziennych zmartwień.",
+    "author": "Michał Muzyka",
+    "image_link": "/assets/img/posts/photo_4.jpg",
+    "created_at": "2023-11-26 19:22:38"
+  },
+  {
+    "_id": {
+      "$oid": "666d90b70b8dd2ed3af6dca1"
+    },
+    "title": "Zanęta DIY dla wędkarzy",
+    "short_description": "Jak przygotować własną zanętę do wędkowania.",
+    "content": "Wędkarstwo rzeczne ma swój urok. Wędrując brzegiem, spotkałem dzisiaj innych pasjonatów tego pięknego hobby. Wspólnie wymienialiśmy się historiami o największych zdobyczach. Z tego wszystkiego wyniosłem nie tylko ryby, ale także nowe przyjaźnie.",
+    "author": "Michał Muzyka",
+    "image_link": "/assets/img/posts/photo_1.jpg",
+    "created_at": "2023-12-22 00:34:35"
+  },
+  {
+    "_id": {
+      "$oid": "666d90b70b8dd2ed3af6dca2"
+    },
+    "title": "Wędkowanie nocą: sekrety połowu",
+    "short_description": "Odkryj tajniki nocnego wędkowania i złów ryby marzeń.",
+    "content": "Chwile samotności nad jeziorem są bezcenne. Dzisiaj to tylko ja, moja wędka i szum fal. Złowiłem spokojnego sandacza, ale najważniejsze to wewnętrzne wyciszenie i kontakt z naturą.",
+    "author": "Michał Muzyka",
+    "image_link": "/assets/img/posts/photo_1.jpg",
+    "created_at": "2021-01-16 17:45:03"
+  },
+  {
+    "_id": {
+      "$oid": "666d90b70b8dd2ed3af6dca3"
+    },
+    "title": "Rzeka Białka: raj dla wędkarzy",
+    "short_description": "Przygoda z wędkowaniem na malowniczej rzece Białka.",
+    "content": "Wędkarstwo to sztuka przewidywania ruchów ryb. Dziś próbowałem swoich sił w połowie na sporym stawie. Złowiłem kilka karpieńców, ale największą frajdę sprawiło mi obserwowanie natury wokół.",
+    "author": "Michał Muzyka",
+    "image_link": "/assets/img/posts/photo_7.webp",
+    "created_at": "2021-06-18 16:01:35"
+  },
+  {
+    "_id": {
+      "$oid": "666d90b70b8dd2ed3af6dca4"
+    },
+    "title": "Wędkarski sprzęt na sezon: top 10",
+    "short_description": "Przegląd najlepszego sprzętu wędkarskiego na nadchodzący sezon.",
+    "content": "Wspomnienia z wędkarskich wypraw są jak skarby. Każda wypłowiała fotografia, każdy drobny szczegół. Dziś złowiłem amura, a jednocześnie złapałem chwilę do zapamiętania.",
+    "author": "Michał Muzyka",
+    "image_link": "/assets/img/posts/photo_8.jpg",
+    "created_at": "2023-03-08 03:52:50"
+  },
+  {
+    "_id": {
+      "$oid": "666d90b70b8dd2ed3af6dca5"
+    },
+    "title": "Wędkowanie zimowe: złowione pod lodem",
+    "short_description": "Historie i porady związane z zimowym wędkowaniem pod lodem.",
+    "content": "Wędkarstwo to także nauka cierpliwości. Dzisiaj długo czekałem na swojego trofeum, ale warto było. Złowiłem wielkiego suma, który na chwilę zatopił moją łódkę swoim majestatycznym ogonem.",
+    "author": "Michał Muzyka",
+    "image_link": "/assets/img/posts/photo_9.jpg",
+    "created_at": "2021-05-10 20:19:26"
+  },
+  {
+    "_id": {
+      "$oid": "666d90b70b8dd2ed3af6dca6"
+    },
+    "title": "Pstrąg tęczowy: perła górskich potoków",
+    "short_description": "Sekrety połowu pstrąga tęczowego w górskich strumieniach.",
+    "content": "Łowienie na muchę to prawdziwa sztuka. Dziś wybrałem się na górską rzekę, gdzie delikatne unoszenie się much na wodzie kusiło pstrągi do ataku. To wędkarstwo wymagające precyzji, ale i dostarczające niezapomnianych emocji.",
+    "author": "Michał Muzyka",
+    "image_link": "/assets/img/posts/photo_10.jpg",
+    "created_at": "2022-05-06 18:58:45"
+  },
+  {
+    "_id": {
+      "$oid": "666d90b70b8dd2ed3af6dca7"
+    },
+    "title": "Magiczny dzień na brzegu: wędkarska przygoda w otoczeniu natury",
+    "short_description": "Zapraszamy do relaksu nad brzegiem, gdzie natura splata się z pasją wędkarską. Odkryj spokój wędkarskich chwil, złów swoje ulubione ryby, a wszystko to otoczone malowniczym krajobrazem.",
+    "content": "Wędkarstwo to nie tylko o samych rybach, ale także o przyjaźniach. Dzisiaj łowiłem w towarzystwie najlepszego przyjaciela. Chociaż ryby były kapryśne, to wspólna przygoda sprawiła, że dzień był udany.",
+    "author": "Michał Muzyka",
+    "image_link": "/assets/img/posts/photo_11.jpg",
+    "created_at": "2023-08-08 10:55:31"
+  },
+  {
+    "_id": {
+      "$oid": "666d90b70b8dd2ed3af6dca8"
+    },
+    "title": "Ryby drapieżne polskich jezior",
+    "short_description": "Opis i porównanie gatunków ryb drapieżnych występujących w polskich jeziorach.",
+    "content": "Zawsze fascynują mnie różne techniki wędkarskie. Dzisiaj eksperymentowałem z połowem spinningowym i udało mi się złowić kilka okoni na lekkie woblery. Każda metoda ma swój urok, a ja uwielbiam odkrywać nowe.",
+    "author": "Michał Muzyka",
+    "image_link": "/assets/img/posts/photo_12.jpg",
+    "created_at": "2023-11-11 22:41:22"
+  },
+  {
+    "_id": {
+      "$oid": "666d90b70b8dd2ed3af6dca9"
+    },
+    "title": "Złowione szczupaki nad Bugiem",
+    "short_description": "Relacja z połowów szczupaków nad malowniczym Bugiem.",
+    "content": "Wędkarstwo to nie tylko lato nad jeziorem. Dzisiaj zaryzykowałem połów w zimie. Choć aura była surowa, to udało mi się zdobyć kilka pstrągów pod lodem. To niesamowite doświadczenie, które na pewno powtórzę.",
+    "author": "Michał Muzyka",
+    "image_link": "/assets/img/posts/photo_13.jpg",
+    "created_at": "2021-05-27 09:40:21"
+  },
+  {
+    "_id": {
+      "$oid": "666d90b70b8dd2ed3af6dcaa"
+    },
+    "title": "Wędkarstwo muchowe: sztuka łowienia",
+    "short_description": "Podstawy wędkarstwa muchowego i tajniki skutecznego połowu.",
+    "content": "Wędkarstwo to dziedzina, w której nigdy się nie kończy nauka. Dziś testowałem nowe przynęty i techniki połowu. Efekt? Złowiłem różnorodne gatunki ryb, co dowodzi, że warto być otwartym na nowości.",
+    "author": "Michał Muzyka",
+    "image_link": "/assets/img/posts/photo_14.jpg",
+    "created_at": "2023-08-01 05:17:42"
+  },
+  {
+    "_id": {
+      "$oid": "666d90b70b8dd2ed3af6dcab"
+    },
+    "title": "Wędkowanie na spławik: najlepsze metody",
+    "short_description": "Sekrety skutecznego wędkowania na spławik.",
+    "content": "Dziś postanowiłem spróbować swoich sił w wędkarstwie morskim. Wyruszyłem na głębokie wody, czując energię oceanu i tajemnicę głębin. Po długiej walce w końcu złowiłem imponującego dorsza. Jego srebrzysta skóra błyszczała na słońcu, a to uczucie spełnienia było bezcenne. Wędkarstwo to nie tylko łowienie ryb, to podróż w świat przygody i odkrywania.",
+    "author": "Michał Muzyka",
+    "image_link": "/assets/img/posts/photo_15.jpg",
+    "created_at": "2023-07-16 22:27:29"
+  }
+]

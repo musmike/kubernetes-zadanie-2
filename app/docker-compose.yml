@@ -1,0 +1,41 @@
+services:
+  db:
+    image: mongo:8.2.3
+    container_name: fishing_shop_db
+    ports:
+      - "27017:27017"
+    volumes:
+      - fishing_shop_data:/data/db
+
+  backend:
+    build: ./backend
+    container_name: fishing_shop_backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    environment:
+      - DB=mongodb://db:27017/fishing_shop
+      - JWTPRIVATEKEY=twoj_bardzo_tajny_klucz_123
+      - SALT=10
+    depends_on:
+      - db
+
+  frontend:
+    build: ./frontend
+    container_name: fishing_shop_frontend
+    ports:
+      - "4200:4200"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    stdin_open: true
+    tty: true
+    depends_on:
+      - backend
+
+volumes:
+  fishing_shop_data:

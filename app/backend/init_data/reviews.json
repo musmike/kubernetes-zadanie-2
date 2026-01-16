@@ -1,0 +1,96 @@
+[{
+  "_id": {
+    "$oid": "666f05c5dca1fa322a02fe4a"
+  },
+  "author": {
+    "$oid": "666dabc152c685d02114826a"
+  },
+  "content": "Super sklep. Przychodzę tam regularnie.",
+  "created_at": {
+    "$date": "2024-06-16T15:33:25.031Z"
+  },
+  "updated_at": {
+    "$date": "2024-06-17T11:29:56.536Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666f090ddca1fa322a02feac"
+  },
+  "author": {
+    "$oid": "666dabc152c685d02114826a"
+  },
+  "content": "Obsługa klienta jest przyjazna i pomocna. Pracownicy chętnie udzielają porad i dzielą się swoją wiedzą na temat najlepszych miejsc do wędkowania czy nowości w świecie wędkarstwa.",
+  "created_at": {
+    "$date": "2024-06-16T15:47:25.942Z"
+  },
+  "updated_at": {
+    "$date": "2024-06-17T11:30:06.250Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666f136adca1fa322a030051"
+  },
+  "author": {
+    "$oid": "666f134adca1fa322a03003c"
+  },
+  "content": "Super sklep.",
+  "created_at": {
+    "$date": "2024-06-16T16:31:38.182Z"
+  },
+  "updated_at": {
+    "$date": "2024-06-16T16:31:38.182Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666f1388dca1fa322a030055"
+  },
+  "author": {
+    "$oid": "666f134adca1fa322a03003c"
+  },
+  "content": "Będę często wpadać.",
+  "created_at": {
+    "$date": "2024-06-16T16:32:08.237Z"
+  },
+  "updated_at": {
+    "$date": "2024-06-17T11:26:13.050Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66702412654882d3754b2301"
+  },
+  "author": {
+    "$oid": "667023a1654882d3754b22e7"
+  },
+  "content": "Super sklep wędkarski. Można tu znaleźć wszystko, co się potrzebuje.",
+  "created_at": {
+    "$date": "2024-06-17T11:54:58.725Z"
+  },
+  "updated_at": {
+    "$date": "2024-06-17T11:54:58.725Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66702467654882d3754b2318"
+  },
+  "author": {
+    "$oid": "66702451654882d3754b2310"
+  },
+  "content": "Sklep wędkarski z prawdziwego zdarzenia. Tutaj znajdziesz wszystko, czego potrzebujesz do udanej wędkarskiej wyprawy.",
+  "created_at": {
+    "$date": "2024-06-17T11:56:23.306Z"
+  },
+  "updated_at": {
+    "$date": "2024-06-17T11:56:23.306Z"
+  },
+  "__v": 0
+}]
