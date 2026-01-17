@@ -1,0 +1,43 @@
+# ===== Node / Express =====
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+*.log
+.env
+
+# ===== Angular =====
+dist/
+tmp/
+out-tsc/
+.angular/
+.cache/
+coverage/
+
+# Angular environment files (opcjonalnie)
+src/environments/environment*.ts
+
+# ===== MongoDB =====
+data/
+*.db
+dump/
+
+# ===== Build / OS =====
+.DS_Store
+Thumbs.db
+
+# ===== IDE / Editor =====
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+
+# ===== Tests =====
+coverage/
+.nyc_output/
+
+# ===== Misc =====
+*.tgz

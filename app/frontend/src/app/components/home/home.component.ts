@@ -14,7 +14,7 @@ import { RouterLink } from '@angular/router';
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <div class="site-heading text-center text-white pt-5">
                         <h1>Wędkarstwo naszą pasją</h1>
-                        <span class="subheading">Strona dla początkujących i zaawansowanych</span>
+                        <span class="subheading">Strona dla początkujących i zaawansowanych wędkarzy</span>
                     </div>
                 </div>
             </div>
@@ -39,7 +39,7 @@ import { RouterLink } from '@angular/router';
                 <hr class="my-4" />
             </div>
         </div>
-        
+
         <div class="row justify-content-end mb-4" *ngIf="hasMore">
             <div class="col-md-6 text-end">
                 <button class="btn btn-primary text-uppercase" (click)="loadMore()">Więcej →</button>

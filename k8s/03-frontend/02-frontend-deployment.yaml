@@ -20,11 +20,10 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: fishing-frontend:v1
+          image: fishing-frontend:v2
           imagePullPolicy: Never
           ports:
             - containerPort: 80
-          
           resources:
             requests:
               memory: "32Mi"

@@ -20,11 +20,10 @@ spec:
     spec:
       containers:
         - name: backend
-          image: fishing-backend:v1
+          image: fishing-backend:v2
           imagePullPolicy: Never
           ports:
             - containerPort: 5000
-          
           resources:
             requests:
               memory: "128Mi"
@@ -35,14 +34,14 @@ spec:
           livenessProbe:
             tcpSocket:
               port: 5000
-            initialDelaySeconds: 15
+            initialDelaySeconds: 30
             periodSeconds: 20
             failureThreshold: 3
           readinessProbe:
             httpGet:
               path: /health
               port: 5000
-            initialDelaySeconds: 10
+            initialDelaySeconds: 30
             periodSeconds: 10
             failureThreshold: 3
           env:
