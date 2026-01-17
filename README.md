@@ -1,8 +1,8 @@
 # Michał Muzyka 2.3 – Sprawozdanie Zadanie 2
 
-### Poniższy zrzut ekranu prezentuje strukturę projektu. W folderze app znajduje się aplikacja zaimplementowana w stacku MEAN. Najważniejsze są w niej pliki Dockerfile, które będą służyć do zbudowania obrazów backendu i frontendu. 
+### Poniższy zrzut ekranu prezentuje strukturę projektu. W folderze app znajduje się aplikacja zaimplementowana w stacku MEAN. Najważniejsze są w niej pliki Dockerfile, które będą służyć do zbudowania obrazów backendu i frontendu. Plik docker-compose.yaml nie jest tu używany.
 
-### Istotny jest też plik index.js frameworka Express backendu, gdzie ustawiona jest trasa /health do sprawdzania poprawności backendu, a także gdzie ustawione są endpointy /auth i /api. Warte uwagi są też pliki seed.js i seeder.js, które służą do wypłenienia bazy danych danymi za pomocą Joba podczas pierwszego uruchomienia aplikacji. 
+### Istotny jest też plik index.js frameworka Express backendu, gdzie ustawiona jest trasa /health do sprawdzania poprawności backendu, a także gdzie ustawione są ścieżki endpointów /auth i /api. Warte uwagi są też pliki seed.js i seeder.js, które służą do wypłenienia bazy danych danymi za pomocą Joba podczas pierwszego uruchomienia aplikacji. 
 
 ### W pliku README.md w folderze app znajduje się krótki opis aplikacji.
 
@@ -41,7 +41,7 @@
 ![alt text](images/image-5.png)
 
 
-### Baza danych również poprawnie przyjęła wartości z secretów. Jednak Secrety Opaque kodowane w Base64 nie są najlepszym rozwiązaniem. Dla produkcji lepiej trzymać je w Vault / External lub SecretsSealed.
+### Baza danych również poprawnie przyjęła wartości z secretów. Jednak Secrety Opaque kodowane w Base64 nie są najlepszym rozwiązaniem. Dla produkcji lepiej trzymać je w Vault / External lub użyć SecretsSealed.
 
 ![alt text](images/image-33.png)
 
@@ -60,12 +60,12 @@
 ![alt text](images/image-9.png)
 
 
-### Jak widać istnieją obiekty PVC i PV, które są ze sobą połączone (Bound), MongoDB ma 1 GB pojemności, a dane przetrwają restart poda, jednak po usunięciu StatefulSet znikną. Jeśli chcę się zachować dane, nalezy użyć reclaimPolicy: Retain.
+### Jak widać istnieją obiekty PVC i PV, które są ze sobą połączone (Bound), MongoDB ma 1 GB pojemności, a dane przetrwają restart poda, jednak po usunięciu PVC znikną. Jeśli chce się zachować dane, nalezy użyć reclaimPolicy: Retain.
 
 ![alt text](images/image-10.png)
 
 
-### Aby dostać się na stronę w przegladarce na adresie http://brilliantapp.zad/ można np. dodać ten adres do pliku /etc/hosts, po uprzednim sprawdzeniu IP Minikube'a.
+### Aby dostać się na stronę w przegladarce na adresie http://brilliantapp.zad/ można np. dodać ten adres do pliku /etc/hosts, po uprzednim sprawdzeniu adresu IP Minikube'a.
 
 ![alt text](images/image-11.png)
 
@@ -87,7 +87,7 @@
 ![alt text](images/image-15.png)
 
 
-### Dodawanie opinii użytkownika działa. Po przetestowaniu tych dwóch funkcjonalności można więc stwierdzić, że trasy /api i /auth backendu działają poprawnie.
+### Dodawanie opinii użytkownika działa. Po przetestowaniu tych dwóch funkcjonalności można więc stwierdzić, że ścieżki endpointów /api i /auth backendu działają poprawnie.
 
 ![alt text](images/image-16.png)
 
@@ -139,7 +139,7 @@
 ![alt text](images/image-20.png)
 
 
-### Stan aplikacji po aktualizacji. Aplikacja nadal działa:
+### Stan aplikacji po aktualizacji. Aplikacja nadal działa i zmiany zostały zastosowane.
 
 ![alt text](images/image-30.png)
 

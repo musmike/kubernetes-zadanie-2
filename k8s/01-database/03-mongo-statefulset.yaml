@@ -52,6 +52,8 @@ spec:
   
   # Szablon żądania wolumenu (PVC). Dzięki temu dla każdego Poda w StatefulSet
   # automatycznie tworzony jest trwały dysk o rozmiarze 1Gi.
+  # Minikube automatycznie tworzy PV przy użyciu domyślnego StorageClass (standard).
+  # Polityka reclaimPolicy: Delete (domyślna) - PV zostanie usunięty po usunięciu PVC.
   volumeClaimTemplates:
   - metadata:
       name: mongo-persistent-storage
