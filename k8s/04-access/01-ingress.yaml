@@ -1,20 +1,25 @@
 apiVersion: networking.k8s.io/v1
+# Obiekt Ingress zarządza dostępem zewnętrznym do usług w klastrze (Routing HTTP).
 kind: Ingress
 metadata:
   name: fishing-ingress
   namespace: fishing-ns
   annotations:
+    # Wskazanie na kontroler Nginx Ingress oraz włączenie obsługi wyrażeń regularnych.
     nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
   rules:
+    # Konfiguracja wirtualnego hosta (domeny).
     - host: brilliantapp.zad
       http:
         paths:
+          # Ścieżki /api i /auth są kierowane do serwisu backendowego.
           - path: /api
             pathType: Prefix
             backend:
               service:
                 name: fishing-backend-service
+                # Port, na którym nasłuchuje serwis backendowy.
                 port:
                   number: 5000
           - path: /auth
@@ -24,10 +29,12 @@ spec:
                 name: fishing-backend-service
                 port:
                   number: 5000
+          # Wszystkie inne ścieżki (główna strona) są kierowane do frontendu.
           - path: /
             pathType: Prefix
             backend:
               service:
                 name: fishing-frontend-service
+                # Port, na którym nasłuchuje serwis frontendowy.
                 port:
                   number: 4200

@@ -1,5 +1,7 @@
 # Strona internetowa sklepu wędkarskiego (MEAN Stack)
 
+![alt text](../images/app-screen.png)
+
 
 ## Opis projektu
 Aplikacja ta to serwis internetowy – blog sklepu wędkarskiego. Aplikacja umożliwia użytkownikom przeglądanie aktualności, zapoznanie się z ofertą sklepu oraz interakcję poprzez system opinii. System został wdrożony w środowisku klastra Kubernetes (Minikube).
@@ -8,7 +10,7 @@ Aplikacja ta to serwis internetowy – blog sklepu wędkarskiego. Aplikacja umo�
 Aplikacja oparta jest na nowoczesnym stosie technologicznym **MEAN**, składającym się z:
 
 1.  MongoDB - nierelacyjna baza danych przechowująca informacje o użytkownikach, postach i opiniach.
-2.  Express.js: Leki framework backendowy obsługujący logikę biznesową i REST API.
+2.  Express.js: Lekki framework backendowy obsługujący logikę biznesową i REST API.
 3.  Angular: Framework frontendowy (SPA) zapewniający dynamiczny i responsywny interfejs użytkownika.
 4.  Node.js: Środowisko uruchomieniowe dla warstwy serwerowej.
 

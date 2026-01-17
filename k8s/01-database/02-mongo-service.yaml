@@ -1,14 +1,20 @@
 apiVersion: v1
 kind: Service
 metadata:
+  # Serwis do komunikacji z bazą MongoDB.
   name: fishing-shop-db
   namespace: fishing-ns
   labels:
     app: fishing-shop-db
 spec:
   ports:
+    # MongoDB działa na porcie 27017
   - port: 27017
     name: mongo
-  clusterIP: None # Headless service
+  # Ustawienie ClusterIP na 'None' tworzy Headless Service.
+  # Jest to wymagane przy współpracy ze StatefulSet, aby każdy Pod otrzymał
+  # własny rekord DNS i stabilną tożsamość sieciową, co jest kluczowe dla bazy danych.
+  clusterIP: None
+  # Serwis kieruje ruch do Podów oznaczonych etykietą 'app: fishing-shop-db'.
   selector:
     app: fishing-shop-db

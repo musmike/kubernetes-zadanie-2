@@ -1,20 +1,27 @@
 apiVersion: batch/v1
+# Zdefiniowano obiekt Job, który służy do jednorazowego uruchomienia skryptu.
+# Jego zadaniem jest wstępne wypełnienie bazy danych (seeding).
 kind: Job
 metadata:
   name: fishing-seeder
   namespace: fishing-ns
   annotations:
+    # Job zostanie automatycznie usunięty 100 sekund po zakończeniu sukcesem.
     ttlSecondsAfterFinished: "100"
 spec:
   template:
     metadata:
       labels:
+        # Etykieta jest potrzebna, aby NetworkPolicy przepuściło ruch do bazy.
         app: fishing-seeder
     spec:
       containers:
       - name: seeder
-        image: fishing-backend:v1
+        image: fishing-backend:v2
+        # Nadpisano domyślną komendę startową, aby uruchomić tylko skrypt seedujący.
         command: ["node", "seed.js"]
+        # Konieczne jest podanie tych samych zmiennych środowiskowych co w backendzie,
+        # aby skrypt mógł połączyć się z bazą.
         env:
           - name: SALT
             valueFrom:
@@ -31,5 +38,6 @@ spec:
               secretKeyRef:
                 name: backend-secret
                 key: jwt_key
+      # W przypadku błędu (np. brak połączenia z bazą), Job spróbuje ponownie.
       restartPolicy: OnFailure
   backoffLimit: 4

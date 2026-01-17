@@ -5,9 +5,11 @@ metadata:
   namespace: fishing-ns
 spec:
   selector:
+    # Serwis kieruje ruch do Podów oznaczonych etykietą 'app: fishing-backend'.
     app: fishing-backend
   ports:
     - protocol: TCP
-      port: 5000
-      targetPort: 5000
+      port: 5000       # Port dostępny wewnątrz klastra
+      targetPort: 5000 # Port, na którym nasłuchuje aplikacja w kontenerze
+  # Typ ClusterIP oznacza, że serwis jest dostępny tylko wewnątrz klastra, co zwiększa bezpieczeństwo.
   type: ClusterIP

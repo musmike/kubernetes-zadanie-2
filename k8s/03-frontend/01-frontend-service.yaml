@@ -5,9 +5,10 @@ metadata:
   namespace: fishing-ns
 spec:
   selector:
+    # Kierowanie ruchu do podów frontendu.
     app: fishing-frontend
   ports:
     - protocol: TCP
-      port: 4200
-      targetPort: 80
+      port: 4200       # Port serwisu
+      targetPort: 80   # Port kontenera (Nginx nasłuchuje na 80)
   type: ClusterIP

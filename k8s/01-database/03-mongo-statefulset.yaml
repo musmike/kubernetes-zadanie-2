@@ -1,26 +1,13 @@
-apiVersion: v1
-kind: Service
-metadata:
-  name: fishing-shop-db
-  namespace: fishing-ns
-  labels:
-    app: fishing-shop-db
-spec:
-  ports:
-  - port: 27017
-    name: mongo
-  clusterIP: None
-  selector:
-    app: fishing-shop-db
----
 apiVersion: apps/v1
+# Zastosowano StatefulSet zamiast Deploymentu, ponieważ baza danych wymaga zachowania stanu,
+# stałej tożsamości sieciowej oraz trwałego przypisania do wolumenu (dysku).
 kind: StatefulSet
 metadata:
   name: fishing-shop-db
   namespace: fishing-ns
 spec:
   serviceName: "fishing-shop-db"
-  replicas: 1
+  replicas: 1 # Uruchomiono jedną instancję bazy danych.
   selector:
     matchLabels:
       app: fishing-shop-db
@@ -29,12 +16,16 @@ spec:
       labels:
         app: fishing-shop-db
     spec:
+      # Czas na poprawne zakończenie pracy kontenera na 10 sekund przed jego wymuszoną terminacją
       terminationGracePeriodSeconds: 10
       containers:
       - name: mongo
+        # Wersja obrazu MongoDB
         image: mongo:4.4.6
         ports:
+        # MongoDB nasłuchuje na porcie 27017
         - containerPort: 27017
+        # Zdefiniowano limity zasobów, aby baza nie zużyła całej pamięci węzła
         resources:
           requests:
             memory: "256Mi"
@@ -42,6 +33,7 @@ spec:
           limits:
             memory: "768Mi"
             cpu: "500m"
+        # Zmienne środowiskowe pobierane są z utworzonego wcześniej Secretu.
         env:
           - name: MONGO_INITDB_ROOT_USERNAME
             valueFrom:
@@ -53,15 +45,20 @@ spec:
               secretKeyRef:
                 name: mongo-secret
                 key: password
+        # Montowanie wolumenu wewnątrz kontenera w ścieżce, gdzie Mongo trzyma dane.
         volumeMounts:
         - name: mongo-persistent-storage
           mountPath: /data/db
   
+  # Szablon żądania wolumenu (PVC). Dzięki temu dla każdego Poda w StatefulSet
+  # automatycznie tworzony jest trwały dysk o rozmiarze 1Gi.
   volumeClaimTemplates:
   - metadata:
       name: mongo-persistent-storage
       namespace: fishing-ns
     spec:
+      # Wolumen może być zamontowany read/write
+      # tylko na jednym node jednocześnie
       accessModes: [ "ReadWriteOnce" ]
       resources:
         requests:

@@ -1,15 +1,18 @@
 apiVersion: apps/v1
+# Deployment zarządza aplikacją backendową
 kind: Deployment
 metadata:
   name: fishing-backend
   namespace: fishing-ns
 spec:
+  # Ustawiono 2 repliki, aby zapewnić wysoką dostępność
   replicas: 2
   strategy:
+    # Strategia RollingUpdate pozwala na aktualizację aplikacji bez przerw w działaniu.
     type: RollingUpdate
     rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 0
+      maxSurge: 1       # Można tymczasowo utworzyć 1 dodatkowy Pod.
+      maxUnavailable: 0 # Wszystkie wymagane Pody muszą być cały czas dostępne.
   selector:
     matchLabels:
       app: fishing-backend
@@ -20,10 +23,13 @@ spec:
     spec:
       containers:
         - name: backend
+          # Obraz zbudowany lokalnie w Minikube (tag v2).
           image: fishing-backend:v2
+          # Polityka Never wymusza użycie obrazu lokalnego (nie pobiera z Docker Hub).
           imagePullPolicy: Never
           ports:
             - containerPort: 5000
+          # Przydział zasobów dla kontenera (ograniczenie CPU i RAM).
           resources:
             requests:
               memory: "128Mi"
@@ -31,12 +37,18 @@ spec:
             limits:
               memory: "300Mi"
               cpu: "500m"
+          
+          # Sonda Liveness: sprawdza, czy proces Node.js działa.
+          # Jeśli test TCP na porcie 5000 nie powiedzie się, kontener zostanie zrestartowany.
           livenessProbe:
             tcpSocket:
               port: 5000
             initialDelaySeconds: 30
             periodSeconds: 20
             failureThreshold: 3
+          
+          # Sonda Readiness: sprawdza, czy aplikacja jest gotowa do obsługi ruchu.
+          # Wykonuje zapytanie HTTP na endpoint /health, który weryfikuje połączenie z bazą danych.
           readinessProbe:
             httpGet:
               path: /health
@@ -44,6 +56,8 @@ spec:
             initialDelaySeconds: 30
             periodSeconds: 10
             failureThreshold: 3
+          
+          # Wstrzyknięcie konfiguracji z ConfigMap i Secret do zmiennych środowiskowych.
           env:
             - name: PORT
               valueFrom:

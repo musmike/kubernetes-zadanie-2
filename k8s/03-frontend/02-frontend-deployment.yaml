@@ -1,12 +1,15 @@
 apiVersion: apps/v1
+# Deployment dla aplikacji frontendowej (Angular serwowany przez Nginx).
 kind: Deployment
 metadata:
   name: fishing-frontend
   namespace: fishing-ns
 spec:
-  replicas: 2
+  # Dwie repliki dla zapewnienia ciągłości działania.
+  replicas: 2 
   strategy:
     type: RollingUpdate
+    # Ustawienia Rolling Update pozwalają na stopniowe wdrażanie nowych wersji aplikacji.
     rollingUpdate:
       maxSurge: 1
       maxUnavailable: 0
@@ -22,8 +25,10 @@ spec:
         - name: frontend
           image: fishing-frontend:v2
           imagePullPolicy: Never
+          # Nginx nasłuchuje na porcie 80 wewnątrz kontenera.
           ports:
             - containerPort: 80
+          # Przydział zasobów dla kontenera frontendowego.
           resources:
             requests:
               memory: "32Mi"
@@ -31,6 +36,8 @@ spec:
             limits:
               memory: "128Mi"
               cpu: "200m"
+          # Sonda Readiness sprawdza, czy serwer Nginx odpowiada na żądania HTTP (kod 200).
+          # Jest to kluczowe przy Rolling Update, aby nie kierować ruchu do niegotowego kontenera.
           readinessProbe:
             httpGet:
               path: /
