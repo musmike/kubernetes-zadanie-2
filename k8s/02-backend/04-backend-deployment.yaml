@@ -24,6 +24,7 @@ spec:
           imagePullPolicy: Never
           ports:
             - containerPort: 5000
+          
           resources:
             requests:
               memory: "128Mi"
@@ -31,16 +32,19 @@ spec:
             limits:
               memory: "300Mi"
               cpu: "500m"
-          # livenessProbe:
-          #   tcpSocket:
-          #     port: 5000
-          #   initialDelaySeconds: 60
-          #   periodSeconds: 20
-          # readinessProbe:
-          #   tcpSocket:
-          #     port: 5000
-          #   initialDelaySeconds: 15
-          #   periodSeconds: 10
+          livenessProbe:
+            tcpSocket:
+              port: 5000
+            initialDelaySeconds: 15
+            periodSeconds: 20
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            failureThreshold: 3
           env:
             - name: PORT
               valueFrom:

@@ -1,0 +1,35 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: fishing-seeder
+  namespace: fishing-ns
+  annotations:
+    ttlSecondsAfterFinished: "100"
+spec:
+  template:
+    metadata:
+      labels:
+        app: fishing-seeder
+    spec:
+      containers:
+      - name: seeder
+        image: fishing-backend:v1
+        command: ["node", "seed.js"]
+        env:
+          - name: SALT
+            valueFrom:
+              secretKeyRef:
+                name: backend-secret
+                key: salt
+          - name: DB
+            valueFrom:
+              secretKeyRef:
+                name: backend-secret
+                key: db_connection
+          - name: JWTPRIVATEKEY
+            valueFrom:
+              secretKeyRef:
+                name: backend-secret
+                key: jwt_key
+      restartPolicy: OnFailure
+  backoffLimit: 4
